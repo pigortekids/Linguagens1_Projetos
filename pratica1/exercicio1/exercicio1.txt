@@ -1,0 +1,21 @@
+1) C:\Program Files\Java\jdk1.8.0_101\
+
+2) C:\Program Files\Java\jdk1.8.0_101\bin\java
+   C:\Program Files\Java\jdk1.8.0_101\bin\javac
+
+3) Vai até a pasta onde está seu codigo pelo programa do java e digite "javac Nome.java"
+
+4) Para executa-lo é só digitar, tambem na pasta onde esta o arquivo "java Nome"
+
+5) Variáveis de ambiente são variáveis do sistema operacional, e elas servem para auxiliar
+   programas que o usuário esta utilizando pegando informações que estão guardadas nelas.
+
+6) Apenas quem tem o poder de administrador do computador que pode criar e alterar variáveis
+   de ambiente.
+
+7) No Windows, basta abrir o "Painel de Controle", clicar no ícone "Sistemas", clicar na
+   aba "Avançados", clicar em "variáveis de ambiente", e la é possivel criar e alterar as
+   variáveis de ambiente do Windows.
+
+8) O JAVA_HOME é uma variável de ambiente necessaria para encaminhar o java para o compilador,
+   e assim podendo executar um código escrito em Java.
