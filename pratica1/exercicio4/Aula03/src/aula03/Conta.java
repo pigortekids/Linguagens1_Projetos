@@ -3,15 +3,14 @@ package aula03;
 public class Conta {
     // atributos
     int numero;
-    String titular;
-    String cpf;
+    Cliente titular;
     double saldo;
     
     //métodos
     void vizualizarSaldo(){
         System.out.println("Saldo = " + this.saldo);
     }
-    void depositar(int valor){
+    void depositar(double valor){
         if(valor>0){
             this.saldo += valor;
         }
@@ -19,21 +18,22 @@ public class Conta {
             System.out.println("valor errado digitado");
         }
     }
-    void sacar(int valor){
-        if(valor>0){
-            if(this.saldo - valor < 0){
-                System.out.println("não tem dinheiro suficiente para sacar");
-            }
-            else{
-                this.saldo -= valor;
-            }
+    boolean sacar(double valor){
+        if(this.saldo - valor < 0){
+            return false;
         }
         else{
-            System.out.println("valor errado digitado");
+            this.saldo -= valor;
+            return true;
         }
     }
-    void transferirDinheiro(){
-        
+    void transferirPara(Conta conta1, double valor){
+        if(this.sacar(valor)){
+            conta1.depositar(valor);
+        }
+        else{
+            System.out.println("Sem dinheiro suficiente para transferir");
+        }
     }
     
 }
