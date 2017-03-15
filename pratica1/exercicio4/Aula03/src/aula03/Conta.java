@@ -2,15 +2,15 @@ package aula03;
 
 public class Conta {
     // atributos
-    int numero;
-    Cliente titular;
-    double saldo;
+    private int numero;
+    private Cliente titular = new Cliente();
+    private double saldo = 0;
     
     //métodos
-    void vizualizarSaldo(){
-        System.out.println("Saldo = " + this.saldo);
+    public void vizualizarSaldo(){
+        System.out.println("Saldo -> R$" + this.saldo);
     }
-    void depositar(double valor){
+    public void depositar(double valor){
         if(valor>0){
             this.saldo += valor;
         }
@@ -18,7 +18,7 @@ public class Conta {
             System.out.println("valor errado digitado");
         }
     }
-    boolean sacar(double valor){
+    public boolean sacar(double valor){
         if(this.saldo - valor < 0){
             return false;
         }
@@ -27,7 +27,7 @@ public class Conta {
             return true;
         }
     }
-    void transferirPara(Conta conta1, double valor){
+    public void transferirPara(Conta conta1, double valor){
         if(this.sacar(valor)){
             conta1.depositar(valor);
         }
@@ -36,4 +36,8 @@ public class Conta {
         }
     }
     
+    public void setNome(String nome){
+        this.titular.setNome(nome);
+    }
+                
 }
