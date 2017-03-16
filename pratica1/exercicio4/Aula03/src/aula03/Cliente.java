@@ -2,9 +2,15 @@ package aula03;
 
 public class Cliente {
     
-    private String nome = "";
-    private String sobrenome = "";
-    private String cpf = "";
+    private String nome;
+    private String sobrenome;
+    private String cpf;
+    
+    public Cliente(){
+        this.nome = "Batata";
+        this.sobrenome = "Frita";
+        this.cpf = "328.926.788-11";
+    }
     
     public void mostrar(){
         System.out.print("Nome --> " + this.nome + " " + this.sobrenome + "\n" +
