@@ -1,4 +1,7 @@
-package aula03;
+// Igor Amaral Correa 15.00588-7
+// Rodrigo Franciozi Rodrigues da Silva 14.04014-0
+
+package atividade1;
 
 public class Cliente {
     
@@ -18,8 +21,7 @@ public class Cliente {
     }
     
     public void setNome(String nome){
-        String nome1 = nome.toLowerCase();
-        this.nome = nome1;
+        this.nome = nome;
     }
     
     public String getNome(){

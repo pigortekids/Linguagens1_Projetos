@@ -4,15 +4,20 @@ public class Conta {
     // atributos
     private int numero;
     private double saldo;
-    public Cliente titular = new Cliente();
+    private Cliente titular;
     
     //métodos
-    public Conta(){
-        this.saldo = 0;
+    public Conta(double saldoInicial, String nomeInicial, String sobrenomeInicial, String cpfInicial){
+        this.saldo = saldoInicial;
+        titular = new Cliente(nomeInicial, sobrenomeInicial, cpfInicial);
     }
     
     public void vizualizarSaldo(){
         System.out.println("Saldo -> R$" + this.saldo);
+    }
+    
+    public void mostrarTudo(){
+        this.titular.mostrar();
     }
     
     public void depositar(double valor){
