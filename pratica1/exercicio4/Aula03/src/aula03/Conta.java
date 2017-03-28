@@ -5,6 +5,7 @@ public class Conta {
     private int numero;
     private double saldo;
     private Cliente titular;
+<<<<<<< HEAD
     private static int totalDeContas = 0;
     
     //construtor
@@ -12,6 +13,13 @@ public class Conta {
         this.saldo = saldoInicial;
         titular = new Cliente(nomeInicial, sobrenomeInicial, cpfInicial);
         Conta.totalDeContas += 1;
+=======
+    
+    //métodos
+    public Conta(double saldoInicial, String nomeInicial, String sobrenomeInicial, String cpfInicial){
+        this.saldo = saldoInicial;
+        titular = new Cliente(nomeInicial, sobrenomeInicial, cpfInicial);
+>>>>>>> e05fb3ccb16b906f47096da1d71dab1bafd154f4
     }
     
     //métodos
@@ -19,6 +27,7 @@ public class Conta {
         System.out.println("Saldo -> R$" + this.saldo);
     }
     
+<<<<<<< HEAD
     public static int getTotalDeContas(){
         return Conta.totalDeContas;
     }
@@ -31,6 +40,8 @@ public class Conta {
         return this.titular.getNome();
     }
     
+=======
+>>>>>>> e05fb3ccb16b906f47096da1d71dab1bafd154f4
     public void mostrarTudo(){
         this.titular.mostrar();
     }
