@@ -17,8 +17,7 @@ public class Cliente {
                 "CPF ---> " + this.cpf + "\n");
     }
     
-    public void setNome(String nome){
-        String nome1 = nome.toLowerCase();
+    public void setNome(String nome1){
         this.nome = nome1;
     }
     
