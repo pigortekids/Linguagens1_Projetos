@@ -4,15 +4,35 @@ public class Conta {
     // atributos
     private int numero;
     private double saldo;
-    public Cliente titular = new Cliente();
+    private Cliente titular;
+    private static int totalDeContas = 0;
     
-    //métodos
-    public Conta(){
-        this.saldo = 0;
+    //construtor
+    public Conta(String nomeInicial, String sobrenomeInicial, String cpfInicial, double saldoInicial){
+        this.saldo = saldoInicial;
+        titular = new Cliente(nomeInicial, sobrenomeInicial, cpfInicial);
+        Conta.totalDeContas += 1;
     }
     
+    //métodos
     public void vizualizarSaldo(){
         System.out.println("Saldo -> R$" + this.saldo);
+    }
+    
+    public static int getTotalDeContas(){
+        return Conta.totalDeContas;
+    }
+    
+    public void setNome(String nome1){
+        this.titular.setNome(nome1);
+    }
+    
+    public String getNome(){
+        return this.titular.getNome();
+    }
+    
+    public void mostrarTudo(){
+        this.titular.mostrar();
     }
     
     public void depositar(double valor){

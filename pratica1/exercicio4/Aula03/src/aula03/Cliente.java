@@ -6,10 +6,10 @@ public class Cliente {
     private String sobrenome;
     private String cpf;
     
-    public Cliente(){
-        this.nome = "Batata";
-        this.sobrenome = "Frita";
-        this.cpf = "328.926.788-11";
+    public Cliente(String nomeInicial, String sobrenomeInicial, String cpfInicial){
+        this.nome = nomeInicial;
+        this.sobrenome = sobrenomeInicial;
+        this.cpf = cpfInicial;
     }
     
     public void mostrar(){
@@ -17,16 +17,27 @@ public class Cliente {
                 "CPF ---> " + this.cpf + "\n");
     }
     
-    public void setNome(String nome){
-        String nome1 = nome.toLowerCase();
+    public void setNome(String nome1){
         this.nome = nome1;
+    }
+    
+    public String getNome(){
+        return this.nome;
     }
     
     public void setSobrenome(String sobrenome){
         this.sobrenome = sobrenome;
     }
     
+    public String getSobrenome(){
+        return this.sobrenome;
+    }
+    
     public void setCPF(String cpf){
         this.cpf = cpf;
+    }
+    
+    public String getCPF(){
+        return this.cpf;
     }
 }
