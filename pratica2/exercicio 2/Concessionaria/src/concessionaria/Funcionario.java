@@ -10,7 +10,7 @@ public class Funcionario {
     protected int horasExtras;
     
     public Funcionario(String nome, String cpf, double salarioBase, 
-            double decimoTerceiro,int horasExtras){
+            double decimoTerceiro, int horasExtras){
         
         this.nome = nome;
         this.cpf = cpf;
