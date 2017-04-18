@@ -6,9 +6,9 @@ public class Funcionario {
     protected String cpf;
     protected int registro;
     protected double salarioBase;
-    /*protected static double totalVendas;
-    protected static double taxasVendaTotais;
-    private static int totalFuncionarios = 0;*/
+    protected double salario;
+    protected static double taxaGeral = 0.05;
+    protected Concessionaria concessionaria;
     
     public Funcionario(String nome, String cpf, int registro, double salarioBase){
         
@@ -16,12 +16,8 @@ public class Funcionario {
         this.cpf = cpf;
         this.registro = registro;
         this.salarioBase = salarioBase;
-        //Funcionario.totalFuncionarios += 1;
+        this.concessionaria.maisUmFuncionario();
         
-    }
-    
-    public double getSalarioBase(){
-        return this.salarioBase;
     }
     
 }
