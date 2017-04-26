@@ -4,11 +4,15 @@ public class Vendedor extends Funcionario {
     
     private double comissao;
     private static double taxaVendedor = 0.03;
-    private double totalVendas;
+    private double totalVendas = 0;
+    private Gerente gerente;
     
-    public void valorComissao(double extra){
-        this.comissao = Vendedor.taxaVendedor*this.totalVendas + 
-                extra;
+    public Vendedor(String nome, String cpf, int registro, double salarioBase) {
+        super(nome, cpf, registro, salarioBase);
+    }
+    
+    public void valorComissao(double bonificacao){
+        this.comissao = Vendedor.taxaVendedor*this.totalVendas + bonificacao;
     }
     
     public void valorSalario(){
@@ -17,7 +21,20 @@ public class Vendedor extends Funcionario {
     
     public void venda(double valor){
         this.totalVendas += valor;
-        this.concessionaria.adicionarVenda(valor);
+    }
+    
+    public void zerarVendas(){
+        this.totalVendas = 0;
+    }
+    
+    public double getTotalVendas(){
+        return this.totalVendas;
+    }
+    
+    @Override
+    public void exibirInformacoes(){
+        super.exibirInformacoes();
+        System.out.println("Vendas: " + this.totalVendas);
     }
     
 }

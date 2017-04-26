@@ -7,7 +7,6 @@ public class Funcionario {
     protected int registro;
     protected double salarioBase;
     protected double salario;
-    protected static double taxaGeral = 0.05;
     protected Concessionaria concessionaria;
     
     public Funcionario(String nome, String cpf, int registro, double salarioBase){
@@ -16,8 +15,34 @@ public class Funcionario {
         this.cpf = cpf;
         this.registro = registro;
         this.salarioBase = salarioBase;
-        this.concessionaria.maisUmFuncionario();
         
+    }
+    
+    public String getNome(){
+        return this.nome;
+    }
+    
+    public String getCPF(){
+        return this.cpf;
+    }
+    
+    public int getRegistro(){
+        return this.registro;
+    }
+    
+    public double getSalario(){
+        return this.salario;
+    }
+    
+    public double getSalarioBase(){
+        return this.salarioBase;
+    }
+    
+    public void exibirInformacoes(){
+        System.out.println("Nome: " + this.nome);
+        System.out.println("CPF: " + this.cpf);
+        System.out.println("Registro: " + this.registro);
+        System.out.println("Salario Base: " + this.salarioBase);
     }
     
 }
