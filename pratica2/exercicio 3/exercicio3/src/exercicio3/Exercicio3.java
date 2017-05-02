@@ -9,12 +9,13 @@ public class Exercicio3 {
         Scanner scanner = new Scanner(System.in);
         
         System.out.print("Quantos vendedores? ");
-        int n = scanner...
+        int n = scanner.nextInt();
         System.out.print("Quantos gerentes? ");
-        int m = scanner...
+        int m = scanner.nextInt();
         
-        Concessionaria cons1 = new Comcessionaria(n, m); 
-        
+        Concessionaria c1 = new Concessionaria(n, m); 
+        c1.novoGerente( Roberto, 123.123.123-12, 1, 2000 );
+        c1.novoVendedor( Pedro, 111.111.111-11, 2, 1000 );
         
         
     }
