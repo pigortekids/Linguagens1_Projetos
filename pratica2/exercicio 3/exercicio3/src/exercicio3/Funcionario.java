@@ -1,6 +1,6 @@
 package exercicio3;
 
-public class Funcionario {
+public abstract class Funcionario {
     
     protected String nome;
     protected String cpf;
@@ -9,13 +9,11 @@ public class Funcionario {
     protected double salario;
     protected Concessionaria concessionaria;
     
-    public Funcionario(String nome, String cpf, int registro, double salarioBase){
-        
+    public Funcionario(String nome, String cpf, int registro, double salarioBase) {
         this.nome = nome;
         this.cpf = cpf;
         this.registro = registro;
         this.salarioBase = salarioBase;
-        
     }
     
     public String getNome(){
