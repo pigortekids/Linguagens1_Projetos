@@ -37,4 +37,5 @@ public class Gerente extends Funcionario {
         System.out.println("Vendas: " + this.totalVendas);
     }
     
+    
 }

@@ -61,4 +61,31 @@ public class Concessionaria {
         this.taxaBonus = tB;
     }
     
+    public int getNVenderoes(){
+        return this.nVend;
+    }
+    
+    public int getNGerentes(){
+        return this.nGere;
+    }
+    
+    public void exibirFuncionarios(){
+        System.out.println("GERENTES:");
+        for(int i=0;i<this.getNGerentes();i++){
+            this.gerente[i].exibirInformacoes();
+        }
+        System.out.println("VENDEDORES:");
+        for(int i=0;i<this.getNVenderoes();i++){
+            this.vendedor[i].exibirInformacoes();
+        }
+    }
+    
+    Vendedor getVendedor(int i){
+        return this.vendedor[i];
+    }
+    
+    Gerente getGerente(int i){
+        return this.gerente[i];
+    }
+    
 }
