@@ -6,7 +6,6 @@ public abstract class Funcionario {
     protected String cpf;
     protected int registro;
     protected double salarioBase;
-    protected double salario;
     protected Concessionaria concessionaria;
     
     public Funcionario(String nome, String cpf, int registro, double salarioBase) {
@@ -20,20 +19,28 @@ public abstract class Funcionario {
         return this.nome;
     }
     
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    
     public String getCPF(){
         return this.cpf;
+    }
+    
+    public void setCPF(String cpf){
+        this.cpf = cpf;
     }
     
     public int getRegistro(){
         return this.registro;
     }
     
-    public double getSalario(){
-        return this.salario;
-    }
-    
     public double getSalarioBase(){
         return this.salarioBase;
+    }
+    
+    public void setSalarioBase(double salario){
+        this.salarioBase = salario;
     }
     
     public void exibirInformacoes(){

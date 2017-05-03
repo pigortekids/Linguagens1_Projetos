@@ -28,7 +28,7 @@ public class Exercicio3 {
                 case 2: gerirFuncionarios(cons) ;break;
                 case 3: realizarVenda(cons) ;break;
                 case 4: exibirResumo(cons) ;break;
-                case 5: sair = false ;break;
+                case 5: sair = true ;break;
             }
         }while(!sair);
           
@@ -45,24 +45,97 @@ public class Exercicio3 {
             System.out.println("Insira");
             System.out.print("nome: ");
             String nome = scanner.nextLine();
+            scanner.next();
             System.out.print("cpf: ");
-            String cpf = scanner.nextLine();
+            String cpf = scanner.next();
+            scanner.next();
             System.out.print("registro: ");
             int registro = scanner.nextInt();
             System.out.print("salario base: ");
             double salarioBase = scanner.nextDouble();
             switch(escolha){
-                case 1: c.novoVendedor(nome, cpf, registro, salarioBase); break;
-                case 2: c.novoGerente(nome, cpf, registro, salarioBase); break;
+                case 1: c.novoVendedor(nome, cpf, registro, salarioBase); sair = true; break;
+                case 2: c.novoGerente(nome, cpf, registro, salarioBase); sair = true; break;
                 case 3: sair = true; break;
             }
         }while(!sair);
     }
     
     private static void gerirFuncionarios(Concessionaria c){
-        bollean sair = false;
+        boolean sair = false;
         do {            
-            c.exibirFuncionarios(); //////////////////////////////////////////////////////////
+            c.exibirFuncionarios();
+            System.out.print("Digite o registro do funcionario: ");
+            int registro = scanner.nextInt();
+            int i;
+            boolean achou = false;
+            for( i = 0 ; i < c.getNVenderoes(); i++ ){
+                if(c.getVendedor(i).getRegistro() != registro){
+                    achou = true;
+                    break;
+                }
+            }
+            if(achou){
+                System.out.println("Digite a opção desejada:");
+                System.out.println("1.Mudar nome");
+                System.out.println("2.Mudar CPF");
+                System.out.println("3.Mudar salário base");
+                System.out.println("4.Nada");
+                int escolha = scanner.nextInt();
+                switch(escolha){
+                    case 1: 
+                        System.out.print("Digite o nome: ");
+                        String nome = scanner.nextLine();
+                        c.getVendedor(i).setNome(nome); 
+                        break;
+                    case 2: 
+                        System.out.print("Digite o CPF: ");
+                        String cpf = scanner.next();
+                        c.getVendedor(i).setCPF(cpf); 
+                        break;
+                    case 3: 
+                        System.out.print("Digite o salário base: ");
+                        double salario = scanner.nextDouble();
+                        c.getVendedor(i).setSalarioBase(salario); 
+                        break;
+                    case 4: sair = false ;break;
+                }
+            }
+            else{
+                for( i = 0 ; i < c.getNVenderoes() ; i++ ){
+                    if(c.getGerente(i).getRegistro() != registro){
+                        achou = true;
+                        System.out.println("Digite a opção desejada:");
+                        System.out.println("1.Mudar nome");
+                        System.out.println("2.Mudar CPF");
+                        System.out.println("3.Mudar salário base");
+                        System.out.println("4.Nada");
+                        int escolha = scanner.nextInt();
+                        switch(escolha){
+                            case 1: 
+                                System.out.print("Digite o nome: ");
+                                String nome = scanner.nextLine();
+                                c.getGerente(i).setNome(nome); 
+                                break;
+                            case 2: 
+                                System.out.print("Digite o CPF: ");
+                                String cpf = scanner.nextLine();
+                                c.getGerente(i).setCPF(cpf); 
+                                break;
+                            case 3: 
+                                System.out.print("Digite o salário base: ");
+                                double salario = scanner.nextDouble();
+                                c.getGerente(i).setSalarioBase(salario); 
+                                break;
+                            case 4: sair = false ;break;
+                        }
+                        break;
+                    }
+                }
+                if(!achou){
+                    System.out.println("Registro não encontrado");
+                }
+            }
         } while (!sair);
     }
     
@@ -73,12 +146,10 @@ public class Exercicio3 {
             int registro = scanner.nextInt();
             System.out.println("Digite o valor da venda: ");
             double venda = scanner.nextDouble();
-            int nV = 0;
-            int i=0;
+            int i;
             boolean achou = false;
-            for( i = 0 ; i < c.getNGerentes() ; i++ ){
-                if(c.vendedor[i].getRegistro() != registro){
-                    nV = 1;
+            for( i = 0 ; i < c.getNVenderoes(); i++ ){
+                if(c.getVendedor(i).getRegistro() != registro){
                     achou = true;
                     break;
                 }
@@ -88,8 +159,7 @@ public class Exercicio3 {
             }
             else{
                 for( i = 0 ; i < c.getNVenderoes() ; i++ ){
-                    if(c.vendedor[i].getRegistro() != registro){
-                        nV = 2;
+                    if(c.getGerente(i).getRegistro() != registro){
                         achou = true;
                         break;
                     }
@@ -114,7 +184,6 @@ public class Exercicio3 {
     
     private static void exibirResumo(Concessionaria c){
         c.exibirFuncionarios();
-        scanner.next();
     }
     
 }

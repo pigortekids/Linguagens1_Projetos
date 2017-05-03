@@ -15,10 +15,6 @@ public class Gerente extends Funcionario {
                 0.25*this.salarioBase + bonificacao;
     }
     
-    public void valorSalario(){
-        this.salario = this.salarioBase + this.comissao;
-    }
-    
     public void venda(double valor){
         this.totalVendas += valor;
     }

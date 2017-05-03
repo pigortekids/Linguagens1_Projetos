@@ -15,10 +15,6 @@ public class Vendedor extends Funcionario {
         this.comissao = Vendedor.taxaVendedor*this.totalVendas + bonificacao;
     }
     
-    public void valorSalario(){
-        this.salario = this.salarioBase + this.comissao;
-    }
-    
     public void venda(double valor){
         this.totalVendas += valor;
     }
