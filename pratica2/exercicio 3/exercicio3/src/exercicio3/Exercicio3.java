@@ -60,7 +60,7 @@ public class Exercicio3 {
     }
     
     private static void gerirFuncionarios(Concessionaria c){
-        bollean sair = false;
+        boolean sair = false;
         do {            
             c.exibirFuncionarios(); //////////////////////////////////////////////////////////
         } while (!sair);
@@ -77,7 +77,7 @@ public class Exercicio3 {
             int i=0;
             boolean achou = false;
             for( i = 0 ; i < c.getNGerentes() ; i++ ){
-                if(c.vendedor[i].getRegistro() != registro){
+                if(c.getVendedor(i).getRegistro() != registro){
                     nV = 1;
                     achou = true;
                     break;
@@ -88,7 +88,7 @@ public class Exercicio3 {
             }
             else{
                 for( i = 0 ; i < c.getNVenderoes() ; i++ ){
-                    if(c.vendedor[i].getRegistro() != registro){
+                    if(c.getVendedor(i).getRegistro() != registro){
                         nV = 2;
                         achou = true;
                         break;
