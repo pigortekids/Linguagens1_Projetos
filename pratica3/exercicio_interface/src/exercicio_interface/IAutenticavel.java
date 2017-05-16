@@ -1,5 +1,5 @@
 package exercicio_interface;
 
 public interface IAutenticavel {
-    public abstract boolean autenticar(int senha);
+    public abstract boolean autenticar(String senha);
 }
