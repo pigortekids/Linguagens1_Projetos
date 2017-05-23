@@ -11,10 +11,12 @@ public class Secretario extends Funcionario implements IExibicao{
         System.out.println(this.getNome() + "\n" + this.getCPF());
         System.out.println(this.getRegistro() + "\n" + this.getRegistro());
     }
-    public void buscarCafe(){
+    public boolean buscarCafe(){
         System.out.println("estou pegando café");
+        return true;
     }
-    public void atenderTelefone(){
+    public boolean atenderTelefone(){
         System.out.println("estou atendendo telefone");
+        return true;
     }
 }

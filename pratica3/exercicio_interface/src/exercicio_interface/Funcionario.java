@@ -16,14 +16,14 @@ public abstract class Funcionario {
     public int getRegistro(){
         return this.registro;
     }
-    public int getNome(){
-        return this.registro;
+    public String getNome(){
+        return this.nome;
     }
-    public int getCPF(){
-        return this.registro;
+    public String getCPF(){
+        return this.cpf;
     }
-    public int getSalario(){
-        return this.registro;
+    public double getSalario(){
+        return this.salario;
     }
     public void setSalario(double salario){
         this.salario = salario;
