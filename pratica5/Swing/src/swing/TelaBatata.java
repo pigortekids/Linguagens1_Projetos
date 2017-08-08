@@ -61,7 +61,6 @@ public class TelaBatata extends javax.swing.JFrame {
 
     private void butaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butaoActionPerformed
         jLabel1.setText("BETETE");
-        jLabel1.setText("BITITI");
     }//GEN-LAST:event_butaoActionPerformed
 
     /**
