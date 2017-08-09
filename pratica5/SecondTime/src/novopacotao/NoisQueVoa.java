@@ -11,9 +11,11 @@ package novopacotao;
  */
 public class NoisQueVoa extends javax.swing.JFrame {
 
-    char[] label = new char[10];
-    String labelS = "          ";
-    int quantidade = 0;
+    int valor1 = 0, valor2 = 0, quantidade = 0;
+    boolean valor = false;
+    char simbolo = ' ';
+    char[] label = new char[13];
+    String labelS = "", resultadoS;
         
     public NoisQueVoa() {
         initComponents();
@@ -38,6 +40,13 @@ public class NoisQueVoa extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
+        botaoMais = new javax.swing.JButton();
+        botaoMenos = new javax.swing.JButton();
+        botaoVezes = new javax.swing.JButton();
+        botaoDividir = new javax.swing.JButton();
+        botaoIgual = new javax.swing.JButton();
+        jButton0 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,45 +78,112 @@ public class NoisQueVoa extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("jButton4");
+        jButton4.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton4.setText("4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
 
-        jButton5.setText("jButton5");
+        jButton5.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton5.setText("5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
 
-        jButton6.setText("jButton6");
+        jButton6.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton6.setText("6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
 
-        jButton7.setText("jButton7");
+        jButton7.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton7.setText("7");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
             }
         });
 
-        jButton8.setText("jButton8");
+        jButton8.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton8.setText("8");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
             }
         });
 
-        jButton9.setText("jButton9");
+        jButton9.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton9.setText("9");
         jButton9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton9ActionPerformed(evt);
+            }
+        });
+
+        botaoMais.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botaoMais.setText("+");
+        botaoMais.setToolTipText("");
+        botaoMais.setName(""); // NOI18N
+        botaoMais.setPreferredSize(new java.awt.Dimension(59, 53));
+        botaoMais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMaisActionPerformed(evt);
+            }
+        });
+
+        botaoMenos.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botaoMenos.setText("-");
+        botaoMenos.setPreferredSize(new java.awt.Dimension(53, 53));
+        botaoMenos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoMenosActionPerformed(evt);
+            }
+        });
+
+        botaoVezes.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botaoVezes.setText("*");
+        botaoVezes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoVezesActionPerformed(evt);
+            }
+        });
+
+        botaoDividir.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botaoDividir.setText("/");
+        botaoDividir.setPreferredSize(new java.awt.Dimension(53, 53));
+        botaoDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoDividirActionPerformed(evt);
+            }
+        });
+
+        botaoIgual.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        botaoIgual.setText("=");
+        botaoIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoIgualActionPerformed(evt);
+            }
+        });
+
+        jButton0.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton0.setText("0");
+        jButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton0ActionPerformed(evt);
+            }
+        });
+
+        jButton10.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jButton10.setText("C");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
             }
         });
 
@@ -115,65 +191,85 @@ public class NoisQueVoa extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(103, 103, 103)
-                                .addComponent(jButton1)
-                                .addGap(104, 104, 104)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(93, 93, 93)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton7)
-                                    .addComponent(jButton4))
-                                .addGap(82, 82, 82)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton4)
+                                    .addComponent(jButton10))
+                                .addGap(36, 36, 36)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton5)
-                                    .addComponent(jButton8))))
-                        .addGap(58, 58, 58)
+                                    .addComponent(jButton2)
+                                    .addComponent(jButton8)
+                                    .addComponent(jButton0))
+                                .addGap(36, 36, 36)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton6)
+                                    .addComponent(jButton9)
+                                    .addComponent(botaoIgual)
+                                    .addComponent(jButton3)))
+                            .addComponent(jButton1)
+                            .addComponent(jButton7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton6)
-                            .addComponent(jButton3)
-                            .addComponent(jButton9)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 364, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(138, Short.MAX_VALUE))
+                            .addComponent(botaoMenos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoMais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botaoVezes)
+                            .addComponent(botaoDividir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(43, 43, 43)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
-                    .addComponent(jButton3))
-                .addGap(76, 76, 76)
+                    .addComponent(jButton3)
+                    .addComponent(botaoMais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
                     .addComponent(jButton5)
-                    .addComponent(jButton6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                    .addComponent(jButton6)
+                    .addComponent(botaoMenos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
                     .addComponent(jButton8)
-                    .addComponent(jButton9))
-                .addGap(62, 62, 62))
+                    .addComponent(jButton7)
+                    .addComponent(jButton9)
+                    .addComponent(botaoVezes))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoDividir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoIgual)
+                    .addComponent(jButton0)
+                    .addComponent(jButton10))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         label[quantidade] = '1';
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 1;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 1;
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -181,6 +277,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 2;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 2;
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -188,6 +292,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 3;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 3;
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -195,6 +307,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 4;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 4;
+        }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -202,6 +322,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 5;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 5;
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -209,6 +337,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 6;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 6;
+        }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -216,6 +352,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 7;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 7;
+        }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -223,6 +367,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 8;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 8;
+        }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -230,7 +382,111 @@ public class NoisQueVoa extends javax.swing.JFrame {
         labelS += label[quantidade];
         quantidade += 1;
         jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 9;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 9;
+        }
     }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void botaoMaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMaisActionPerformed
+        if(simbolo == ' '){
+            simbolo = '+';
+            label[quantidade] = '+';
+            labelS += label[quantidade];
+            quantidade += 1;
+            jLabel1.setText(labelS);
+            valor = true;
+        }
+    }//GEN-LAST:event_botaoMaisActionPerformed
+
+    private void botaoMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoMenosActionPerformed
+        if(simbolo == ' '){
+            simbolo = '-';
+            label[quantidade] = '-';
+            labelS += label[quantidade];
+            quantidade += 1;
+            jLabel1.setText(labelS);
+            valor = true;
+        }
+    }//GEN-LAST:event_botaoMenosActionPerformed
+
+    private void botaoVezesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoVezesActionPerformed
+        if(simbolo == ' '){
+            simbolo = '*';
+            label[quantidade] = '*';
+            labelS += label[quantidade];
+            quantidade += 1;
+            jLabel1.setText(labelS);
+            valor = true;
+        }
+    }//GEN-LAST:event_botaoVezesActionPerformed
+
+    private void botaoDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoDividirActionPerformed
+        if(simbolo == ' '){
+            simbolo = '/';
+            label[quantidade] = '/';
+            labelS += label[quantidade];
+            quantidade += 1;
+            jLabel1.setText(labelS);
+            valor = true;
+        }
+    }//GEN-LAST:event_botaoDividirActionPerformed
+
+    private void botaoIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoIgualActionPerformed
+        if(simbolo == '+'){
+            valor1 += valor2;
+        }
+        else if(simbolo == '-'){
+            valor1 -= valor2;
+        }
+        else if(simbolo == '*'){
+            valor1 *= valor2;
+        }
+        else if(simbolo == '/'){
+            if(valor2 != 0){
+                valor1 /= valor2;
+            }
+            else{
+                valor1 = 0;
+            }
+        }
+        resultadoS = "" + valor1;
+        jLabel1.setText(resultadoS);
+        valor2 = 0;
+        simbolo = ' ';
+        labelS = Integer.toString(valor1);
+        quantidade = 0;
+        
+    }//GEN-LAST:event_botaoIgualActionPerformed
+
+    private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
+        label[quantidade] = '0';
+        labelS += label[quantidade];
+        quantidade += 1;
+        jLabel1.setText(labelS);
+        if(!valor){
+            valor1 *= 10;
+            valor1 += 0;
+        }
+        else{
+            valor2 *= 10;
+            valor2 += 0;
+        }
+    }//GEN-LAST:event_jButton0ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        valor1 = 0;
+        valor2 = 0;
+        quantidade = 0;
+        valor = false;
+        simbolo = ' ';
+        labelS = "";
+        jLabel1.setText("0");
+    }//GEN-LAST:event_jButton10ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,7 +525,14 @@ public class NoisQueVoa extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoDividir;
+    private javax.swing.JButton botaoIgual;
+    private javax.swing.JButton botaoMais;
+    private javax.swing.JButton botaoMenos;
+    private javax.swing.JButton botaoVezes;
+    private javax.swing.JButton jButton0;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
