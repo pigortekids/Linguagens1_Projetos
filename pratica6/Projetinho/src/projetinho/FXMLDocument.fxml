@@ -6,20 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="270.0" prefWidth="378.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetinho.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="320.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projetinho.FXMLDocumentController">
     <children>
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
-      <Button fx:id="btImagem" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#clickImagem" prefHeight="49.0" prefWidth="60.0" text="Imagem" />
-      <TextField fx:id="tfNome" layoutX="126.0" layoutY="66.0" />
-      <TextField fx:id="tfIdade" layoutX="126.0" layoutY="95.0" />
-      <TextField fx:id="tfEndereco" layoutX="126.0" layoutY="125.0" />
-      <TextField fx:id="tfRG" layoutX="126.0" layoutY="153.0" />
-      <Label layoutX="85.0" layoutY="70.0" text="Nome" />
-      <Label layoutX="85.0" layoutY="99.0" text="Idade" />
-      <Label layoutX="69.0" layoutY="129.0" text="Endereço" />
-      <Label layoutX="94.0" layoutY="157.0" text="RG" />
-      <Label layoutX="91.0" layoutY="188.0" text="CPF" />
-      <TextField fx:id="tfCPF" layoutX="126.0" layoutY="184.0" />
-      <Button fx:id="btSalvar" layoutX="294.0" layoutY="219.0" mnemonicParsing="false" onAction="#clickSalvar" text="Salvar" />
+      <Button fx:id="btImagem" layoutX="20.0" layoutY="24.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="76.0" text="Imagem" />
+      <TextField fx:id="tfNome" layoutX="157.0" layoutY="120.0" />
+      <TextField fx:id="tfIdade" layoutX="157.0" layoutY="154.0" />
+      <TextField fx:id="tfEnedereco" layoutX="157.0" layoutY="184.0" />
+      <TextField fx:id="tfRG" layoutX="157.0" layoutY="219.0" />
+      <TextField fx:id="tfCPF" layoutX="157.0" layoutY="252.0" />
+      <Button fx:id="btSalvar" layoutX="352.0" layoutY="242.0" mnemonicParsing="false" onAction="#clickSalvar" text="Salvar" />
+      <Label fx:id="lbNome" layoutX="108.0" layoutY="124.0" text="Nome" />
+      <Label layoutX="114.0" layoutY="158.0" text="Idade" />
+      <Label layoutX="94.0" layoutY="188.0" text="Endereço" />
+      <Label layoutX="121.0" layoutY="223.0" text="RG" />
+      <Label layoutX="119.0" layoutY="256.0" text="CPF" />
     </children>
 </AnchorPane>

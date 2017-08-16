@@ -10,11 +10,12 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
 
 /**
@@ -23,33 +24,35 @@ import java.io.IOException;
  */
 public class FXMLDocumentController implements Initializable {
     
+    private static final String fileName = "infos.txt";
+    BufferedWriter bw = null;
+    FileWriter fw = null;
+    
     @FXML
-    private Label label;
-    private TextField tfNome;
-    private TextField tfIdade;
-    private TextField tfEndereco;
-    private TextField tfRG;
-    private TextField tfCPF;
+    private Label lbNome;
+    private Button btSalvar;
+    private TextField tfNome, tfIdade;
     
     @FXML
     private void clickSalvar(ActionEvent event) {
-        /*try{
-            PrintWriter writer = new PrintWriter(tfNome.getText() + ".txt", "UTF-8");
-            writer.println(tfNome.getText() + ";");
-            writer.println(tfIdade.getText() + ";");
-            writer.println(tfEndereco.getText() + ";");
-            writer.println(tfRG.getText() + ";");
-            writer.println(tfCPF.getText());
-            writer.close();
+        String content = "dtyjndty";
+        lbNome.setText(content);
+        try {
+            fw = new FileWriter(fileName);
+            bw = new BufferedWriter(fw);
+            bw.write(content);
         } catch (IOException e) {
-           // do something
-        }*/
-        
-        /*try {
-            Files.write(Paths.get("myfile.txt"), "the text".getBytes(), StandardOpenOption.APPEND);
-        }catch (IOException e) {
-            //exception handling left as an exercise for the reader
-        }*/
+            e.printStackTrace();
+        } finally {
+            try {
+                if (bw != null)
+                    bw.close();
+                if (fw != null)
+                    fw.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
     
     @Override
