@@ -26,14 +26,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label lbNome;
     private Button btSalvar;
-    private TextField tfNome, tfIdade;
+    private TextField tfNome, tfIdade, tfEndereco, tfRG, tfCPF;
     private static final String fileName = "infos.txt";
     BufferedWriter bw = null;
     FileWriter fw = null;
     
     @FXML
     private void clickSalvar(ActionEvent event) {
-        String content = "dtyjndty";
+        //String content = tfNome.getText()+";"+tfIdade.getText()+";"+tfEndereco.getText()+";"+tfRG.getText()+";"+tfCPF.getText();
+        String content = "batata";
         lbNome.setText(content);
         try {
             fw = new FileWriter(fileName);
