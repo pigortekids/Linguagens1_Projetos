@@ -26,6 +26,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Label lbNome;
     private Button btSalvar;
+    @FXML
     private TextField tfNome, tfIdade, tfEndereco, tfRG, tfCPF;
     private static final String fileName = "infos.txt";
     BufferedWriter bw = null;
@@ -33,8 +34,7 @@ public class FXMLDocumentController implements Initializable {
     
     @FXML
     private void clickSalvar(ActionEvent event) {
-        //String content = tfNome.getText()+";"+tfIdade.getText()+";"+tfEndereco.getText()+";"+tfRG.getText()+";"+tfCPF.getText();
-        String content = "batata";
+        String content = tfNome.getText()+";"+tfIdade.getText()+";"+tfEndereco.getText()+";"+tfRG.getText()+";"+tfCPF.getText();
         lbNome.setText(content);
         try {
             fw = new FileWriter(fileName);
@@ -52,6 +52,11 @@ public class FXMLDocumentController implements Initializable {
                 ex.printStackTrace();
             }
         }
+        tfNome.clear();
+        tfIdade.clear();
+        tfEndereco.clear();
+        tfRG.clear();
+        tfCPF.clear();
     }
     
     @Override
