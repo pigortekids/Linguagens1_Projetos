@@ -13,7 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -24,14 +23,13 @@ import java.io.IOException;
  */
 public class FXMLDocumentController implements Initializable {
     
-    private static final String fileName = "infos.txt";
-    BufferedWriter bw = null;
-    FileWriter fw = null;
-    
     @FXML
     private Label lbNome;
     private Button btSalvar;
     private TextField tfNome, tfIdade;
+    private static final String fileName = "infos.txt";
+    BufferedWriter bw = null;
+    FileWriter fw = null;
     
     @FXML
     private void clickSalvar(ActionEvent event) {
