@@ -148,14 +148,11 @@ public class Exercicio3 {
             double venda = scanner.nextDouble();
             int i;
             boolean achou = false;
-<<<<<<< HEAD
             for( i = 0 ; i < c.getNGerentes() ; i++ ){
                 if(c.getVendedor(i).getRegistro() != registro){
                     nV = 1;
-=======
             for( i = 0 ; i < c.getNVenderoes(); i++ ){
                 if(c.getVendedor(i).getRegistro() != registro){
->>>>>>> 277595afaeadc0f47b3bad887c4e1af3b81a8bbb
                     achou = true;
                     break;
                 }
@@ -165,12 +162,9 @@ public class Exercicio3 {
             }
             else{
                 for( i = 0 ; i < c.getNVenderoes() ; i++ ){
-<<<<<<< HEAD
                     if(c.getVendedor(i).getRegistro() != registro){
                         nV = 2;
-=======
                     if(c.getGerente(i).getRegistro() != registro){
->>>>>>> 277595afaeadc0f47b3bad887c4e1af3b81a8bbb
                         achou = true;
                         break;
                     }
