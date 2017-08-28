@@ -1,7 +1,6 @@
 package exercicio1;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class Exercicio1 {
 
