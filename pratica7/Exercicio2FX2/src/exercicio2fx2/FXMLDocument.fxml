@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="337.0" prefWidth="320" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="exercicio2fx2.FXMLDocumentController">
+    <children>
+        <Button fx:id="botaoSair" layoutX="221.0" layoutY="280.0" onAction="#clickSair" text="Sair" />
+      <Button fx:id="botaoAdicionar" layoutX="36.0" layoutY="280.0" mnemonicParsing="false" onAction="#clickAdicionar" text="Adicionar" />
+      <Button fx:id="botaoEditar" layoutX="137.0" layoutY="280.0" mnemonicParsing="false" onAction="#clickEditar" text="Editar" />
+      <TableView layoutX="8.0" layoutY="10.0" prefHeight="251.0" prefWidth="298.0">
+        <columns>
+          <TableColumn prefWidth="151.0" text="C1" />
+          <TableColumn fx:id="tableView" prefWidth="146.0" text="C2" />
+        </columns>
+      </TableView>
+    </children>
+</AnchorPane>
