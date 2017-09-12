@@ -9,11 +9,15 @@ import br.com.Rodrigo.organizando.*;
 
 public class Organizando {
 
-    br.com.igao.organizando.Cliente eu = new br.com.igao.organizando.Cliente("potato");
+    
     
     public static void main(String[] args) {
+        br.com.igao.organizando.Cliente eu = new br.com.igao.organizando.Cliente("potato");
+        br.com.Rodrigo.organizando.Cliente ele = new br.com.Rodrigo.organizando.Cliente();
+        
         System.out.println("BATAAAAATAAAA");
-        //System.out.println(eu.getNome());
+        System.out.println(eu.getNome());
+        System.out.println(ele.retornaNome("boi tata"));
     }
     
 }
