@@ -1,4 +1,4 @@
-package br.com.igor.batatasql;
+package br.com.igao.batatainsert;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ public class ConnectionFactory {
     
     public static Connection getConnection(){
         try{
-            return DriverManager.getConnection("jdbc:mysql://localhost/batataschema", "root", "");
+            return DriverManager.getConnection("jdbc:mysql://localhost/batatashema", "root", "");
         } catch(SQLException e){
             throw new RuntimeException(e);
         }

@@ -1,4 +1,4 @@
-package br.com.igor.batatasql;
+package br.com.igao.batatasql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
