@@ -14,4 +14,16 @@ public class Produto {
         this.quantidade = quantidade;
     }
     
+    public String getNome(){
+        return this.nome;
+    }
+    
+    public float getPreco(){
+        return this.preco;
+    }
+    
+    public int getQuantidade(){
+        return this.quantidade;
+    }
+    
 }

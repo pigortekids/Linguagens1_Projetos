@@ -13,28 +13,26 @@ public class ELuja {
         
         Scanner scanner = new Scanner(System.in);
         Loja loja = new Loja();
-        boolean permissao = false;
+        String nome;
+        /*boolean permissao = false;
         do{
             System.out.println("Digite seu nome:");
             String nome = scanner.next();
             if(loja.conferirNome()){
                 System.out.println("Digite sua senha:");
-                //continuar aqui
+                String senha = scanner.next();
+                if(loja.conferirSenha(nome)){
+                    permissao = true;
+                }
+                else{
+                    System.out.println("Senha inválida");
+                }
             }
             else{
                 System.out.println("Nome inválido");
             }
-        }while(!permissao);
-        boolean sair0 = false;
-        do{
-            
-            int escolha = scanner.nextInt();
-            switch(escolha){
-                case 1:
-                    loja.menuPrincipal();
-            }
-            
-        }while(!sair0);
+        }while(!permissao);*/
+        loja.menuPrincipal(nome);
         
     }
     
