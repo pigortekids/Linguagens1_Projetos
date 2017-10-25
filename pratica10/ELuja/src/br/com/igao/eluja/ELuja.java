@@ -13,7 +13,7 @@ public class ELuja {
         
         Scanner scanner = new Scanner(System.in);
         Loja loja = new Loja();
-        String nome;
+        String nome = "";
         /*boolean permissao = false;
         do{
             System.out.println("Digite seu nome:");

@@ -3,12 +3,14 @@ package br.com.igao.eluja;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,49 +54,88 @@ public class Loja {
     public void mostrarProdutos(){
         
         Connection conexao = ConnectionFactory.getConnection();
-        PreparedStatement ps;
         String sql;
         System.out.println("\n\n1.Todos os produtos\n2.comidas/bebidas\n3.eletrônicos");
-            int escolha = scanner.nextInt();
-            switch(escolha){
+            int escolha1 = scanner.nextInt();
+            switch(escolha1){
                 case 1:
-                    sql = "SELECT nome, preco, quantidade FROM eluja.tblprodutos;";
+                    sql = "SELECT * FROM eluja.tblprodutos;";
                     try {
-                        ps = conexao.prepareStatement(sql);
-                        System.out.println("  nome    preço    quanidade");
-                        System.out.println(ps);
-                        ps.close();
-                        conexao.close();
+                        Statement st = conexao.createStatement();
+                        ResultSet rs = st.executeQuery(sql);
+                        System.out.println("nome   preço  quantidade");
+                        while(rs.next()) {  
+                            String str1 = rs.getString("nome");
+                            String str2 = rs.getString("preco");
+                            String str3 = rs.getString("quantidade");
+                            System.out.println(str1 + "     " + str2 + "     " + str3);
+                        }
                     } catch (SQLException ex) {
                         Logger.getLogger(ELuja.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
                 case 2:
-                    sql = "SELECT nome, preco, quantidade FROM eluja.tblprodutos WHERE tipo = 'comida' OR tipo = 'bebida';";
+                    sql = "SELECT * FROM eluja.tblprodutos WHERE tipo = 'comida' OR tipo = 'bebida';";
                     try {
-                        ps = conexao.prepareStatement(sql);
-                        System.out.println("  nome    preço    quanidade");
-                        System.out.println(ps);
-                        ps.close();
-                        conexao.close();
+                        Statement st = conexao.createStatement();
+                        ResultSet rs = st.executeQuery(sql);
+                        System.out.println("nome   preço  quantidade");
+                        while(rs.next()) {  
+                            String str1 = rs.getString("nome");
+                            String str2 = rs.getString("preco");
+                            String str3 = rs.getString("quantidade");
+                            System.out.println(str1 + "     " + str2 + "     " + str3);
+                        }
                     } catch (SQLException ex) {
                         Logger.getLogger(ELuja.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
                 case 3:
-                    sql = "SELECT nome, preco, quantidade FROM eluja.tblprodutos WHERE tipo = 'eletrônico';";
+                    sql = "SELECT * FROM eluja.tblprodutos WHERE tipo = 'eletrônico';";
                     try {
-                        ps = conexao.prepareStatement(sql);
-                        System.out.println("  nome    preço    quanidade");
-                        System.out.println(ps);
-                        ps.close();
-                        conexao.close();
+                        Statement st = conexao.createStatement();
+                        ResultSet rs = st.executeQuery(sql);
+                        System.out.println("nome   preço  quantidade");
+                        while(rs.next()) {  
+                            String str1 = rs.getString("nome");
+                            String str2 = rs.getString("preco");
+                            String str3 = rs.getString("quantidade");
+                            System.out.println(str1 + "     " + str2 + "     " + str3);
+                        }
                     } catch (SQLException ex) {
                         Logger.getLogger(ELuja.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
+            }System.out.println("\nDeseja adicionar algum item ao seu carrinho?\n1.sim   2.não");
+            int escolha2 = scanner.nextInt();
+            if(escolha2 == 1){
+                int idProduto = this.getIdProduto();
+                 //COLOCAR O PRODUTO NO CARRINHO ................................................
             }
-                    
+            
+    }
+    
+    private int getIdProduto(){
+        
+        Connection conexao = ConnectionFactory.getConnection();
+        boolean saida = false;
+        System.out.println("Qual o nome do item que deseja adicionar?");
+        do{
+            String nomeProduto = scanner.next();
+            String sql = "SELECT idProduto FROM eluja.tblprodutos WHERE nome = '" + nomeProduto + "';";
+            try {
+                Statement st = conexao.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+                int idProduto = rs.getInt("idProduto");
+                System.out.println("Produto encontrado");
+                conexao.close();
+                saida = true;
+            } catch (SQLException ex) {
+                System.out.println("Produto não encontrado\nDigite o nome do produto novamente");
+            }
+        }while(!saida);
+        
+        return idProduto; ////////////////////////////////////////////////////////////////////////
     }
     
     public void mostrarCarrinho(String nome){
