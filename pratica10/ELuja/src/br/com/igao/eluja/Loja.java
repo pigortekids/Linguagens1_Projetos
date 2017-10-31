@@ -106,7 +106,8 @@ public class Loja {
                         Logger.getLogger(ELuja.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     break;
-            }System.out.println("\nDeseja adicionar algum item ao seu carrinho?\n1.sim   2.não");
+            }
+            System.out.println("\nDeseja adicionar algum item ao seu carrinho?\n1.sim   2.não");
             int escolha2 = scanner.nextInt();
             if(escolha2 == 1){
                 int idProduto = this.getIdProduto();
@@ -119,6 +120,7 @@ public class Loja {
         
         Connection conexao = ConnectionFactory.getConnection();
         boolean saida = false;
+        int idProduto = 0;
         System.out.println("Qual o nome do item que deseja adicionar?");
         do{
             String nomeProduto = scanner.next();
@@ -126,7 +128,9 @@ public class Loja {
             try {
                 Statement st = conexao.createStatement();
                 ResultSet rs = st.executeQuery(sql);
-                int idProduto = rs.getInt("idProduto");
+                rs.first();
+                idProduto = rs.getInt("idProduto");
+                System.out.println(idProduto);
                 System.out.println("Produto encontrado");
                 conexao.close();
                 saida = true;
@@ -135,7 +139,7 @@ public class Loja {
             }
         }while(!saida);
         
-        return idProduto; ////////////////////////////////////////////////////////////////////////
+        return idProduto;
     }
     
     public void mostrarCarrinho(String nome){

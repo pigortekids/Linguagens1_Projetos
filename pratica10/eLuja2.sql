@@ -110,7 +110,7 @@ CREATE TABLE `tblprodutos` (
 
 LOCK TABLES `tblprodutos` WRITE;
 /*!40000 ALTER TABLE `tblprodutos` DISABLE KEYS */;
-INSERT INTO `tblprodutos` VALUES (1,'agua',2,50,'bebida'),(5,'batata',75,100,'comida'),(2,'arroz',5,20,'comida'),(3,'feijao',5,20,'comida'),(6,'mouse',50,10,'eletrônico'),(7,'teclado',50,15,'eletrônico'),(8,'monitor',150,10,'eletrônico');
+INSERT INTO `tblprodutos` VALUES (1,'agua',2,50,'bebida'),(5,'batata',75,100,'comida'),(2,'arroz',5,20,'comida'),(3,'feijao',5,20,'comida'),(6,'mouse',50,10,'eletrônica'),(7,'teclado',50,15,'eletrônica'),(8,'monitor',150,10,'eletrônica');
 /*!40000 ALTER TABLE `tblprodutos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -150,4 +150,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-25 11:00:41
+-- Dump completed on 2017-10-31 10:49:31
