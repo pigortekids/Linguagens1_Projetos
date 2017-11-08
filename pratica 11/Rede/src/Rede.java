@@ -58,21 +58,7 @@ public class Rede {
                     int coluna = in.nextInt();
                     
                     jogo[linha][coluna] = 'x';
-                    
-
-                    for(int i=0;i<3;i++){
-                        for(int j=0;j<3;j++){
-                            System.out.print(jogo[i][j] + " ");
-                        }
-                        System.out.println();
-                    }
-                    System.out.println("Em que posição deseja colocar?");
-                    System.out.print("linha:");
-                    linha = scan.nextInt();
-                    System.out.print("coluna:");
-                    coluna = scan.nextInt();
-                    
-                    jogo[linha][coluna] = 'o';
+                   
                 }
                 in.close();
                 scan.close();

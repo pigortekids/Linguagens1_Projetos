@@ -27,6 +27,25 @@ public class Cliente {
                 int valor = teclado.nextInt();
                 saidaRede.flush();
                 saidaRede.println(valor);
+                
+                for(int i=0;i<3;i++){
+                    for(int j=0;j<3;j++){
+                        saidaRede.print(jogo[i][j] + " ");
+                    }
+                    saidaRede.println();
+                }
+                
+                System.out.println("Em que posição deseja colocar?");
+                System.out.print("linha:");
+                int valor = teclado.nextInt();
+                saidaRede.flush();
+                saidaRede.println(valor);
+                System.out.print("coluna:");
+                coluna = scan.nextInt();
+
+                jogo[linha][coluna] = 'o';
+                entradaRede.nextInt();
+                
             }
             cliente.close();
         } catch (IOException ex) {
