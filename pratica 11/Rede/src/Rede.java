@@ -15,7 +15,6 @@ public class Rede {
 
     public static void main(String[] args) {
         
-        String msg = " ";
         try {
             ServerSocket servidor = new ServerSocket(5000);
             System.out.println("calmo bebe");
@@ -42,6 +41,7 @@ public class Rede {
                 
                 saidaRede.println("Seja Bem vindo ao Jogo da Velha do Igão");
                 
+                String msg = " ";
                 while(msg != "sair"){
                     
                     for(int i=0;i<3;i++){

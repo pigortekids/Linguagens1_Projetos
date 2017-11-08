@@ -26,7 +26,7 @@ public class Cliente {
                 }
                 int valor = teclado.nextInt();
                 saidaRede.flush();
-                saidaRede.print(valor);
+                saidaRede.println(valor);
             }
             cliente.close();
         } catch (IOException ex) {
