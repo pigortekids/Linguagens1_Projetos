@@ -1,4 +1,4 @@
-package thread;
+package cliente;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -7,22 +7,21 @@ import java.net.Socket;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
-public class Treduri implements Runnable{
+public class Cliente implements Runnable{
 
     static Socket cliente;
     static boolean fechou = false;
     
-    public static void main(String[] args){
+    public static void main(String[] args) {
+
+        String serverAdress = JOptionPane.showInputDialog("Amanda o IP\nNa porta 5000");
         
         try {
-            ServerSocket servidor = new ServerSocket(5000);
-            System.out.println("calmo bebe");
-            
-            cliente = servidor.accept();
-            System.out.println("Nova conexão");
-         
-            Thread thr_entrada = new Thread(new Treduri());
+            cliente = new Socket(serverAdress, 5000);
+
+            Thread thr_entrada = new Thread(new Cliente());
             thr_entrada.start();
 
             try(
@@ -31,7 +30,7 @@ public class Treduri implements Runnable{
             )
             {
                 saidaRede.println("Boa garotão");
-                
+
                 String msg = " ";
                 while(!fechou && !msg.equalsIgnoreCase("tchau")){
                     msg = teclado.nextLine();
@@ -39,15 +38,14 @@ public class Treduri implements Runnable{
                 }
                 System.out.println("Cliente fechou conexão");
                 fechou = true;
-                servidor.close();
                 cliente.close();
             } catch (IOException ex) {
-                //Logger.getLogger(Treduri.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
             }
         } catch (IOException ex) {
-            //Logger.getLogger(Treduri.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
 
     @Override
@@ -60,8 +58,8 @@ public class Treduri implements Runnable{
                 System.out.println("Servidor: " + msg);
             }
         } catch (IOException ex) {
-            //Logger.getLogger(Treduri.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Cliente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }
